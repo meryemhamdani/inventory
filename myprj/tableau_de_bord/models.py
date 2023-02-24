@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 CATEGORY = (
-    ('Stationary', 'Stationary'),
+    ('bureau', 'bureau'),
     ('Electronics', 'Electronics'),
-    ('Food', 'Food'),
+    ('portable', 'portable'),
 )
 
 
@@ -16,17 +16,20 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(null=True)
 
     class Meta:
-        verbose_name_plural = 'Product'
+        verbose_name_plural = ' Product'
     def __str__(self):
         return f'{self.name}-{self.quantity}'
 
 class Order(models.Model):
-    Product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
-    Staff = models.ForeignKey(User, models.CASCADE, null=True)
-    Order_quantity =models.PositiveIntegerField(null=True)
-    date=models.DateTimeField(auto_now_add=True)
+    name = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
+    customer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    order_quantity = models.PositiveIntegerField(null=True)
 
-    class Meta:
+
+date=models.DateTimeField(auto_now_add=True)
+
+class Meta:
         verbose_name_plural = 'Order'
-    def __str__(self):
-        return f'{self.Product} ordered by {self.Staff.username}'
+
+def _str_(self):
+        return f'{self.name} commander par {self.customer}'
