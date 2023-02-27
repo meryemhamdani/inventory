@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myprj',
     'tableau_de_bord.apps.TableauDeBordConfig',
+    'user.apps.UserConfig',
+
+
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ROOT_URLCONF = 'myprj.urls'
 
 TEMPLATES = [
@@ -67,7 +72,7 @@ TEMPLATES = [
             ],
         },
     },
-]
+ ]
 
 WSGI_APPLICATION = 'myprj.wsgi.application'
 
@@ -127,4 +132,3 @@ STATTICFILES_DIRS = [
 ]
 STATIC_ROOT = (BASE_DIR,"asert/")
 STATIC_ROOT = os.path.join(BASE_DIR, "asert/")
-
