@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myprj',
     'tableau_de_bord.apps.TableauDeBordConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
