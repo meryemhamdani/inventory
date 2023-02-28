@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'partials/base.html' %}
+{% block title %} Logout page {% endblock%}
 
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3"></div>
+        <div class="border bg-white p-3">
+            <h3>Logout Page</h3>
+            <hr>
+            <div class="alert alert-danger">
+                <h4>vous êtes déconnecté </h4>
+            </div>
+            <a href="{% url 'user-login' %}"
+            >Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -132,3 +132,5 @@ STATTICFILES_DIRS = [
 ]
 STATIC_ROOT = (BASE_DIR,"asert/")
 STATIC_ROOT = os.path.join(BASE_DIR, "asert/")
+LOGIN_REDIRECT_URL = 'tableau_de_bord-index'
+
